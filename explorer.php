@@ -23,6 +23,14 @@
 		<a href="logout.php"><div class="button" style="display:inline-block;">Log out</div><a/>
 		<div class="underline"></div>
 		
+		<?php
+			if(isset($_SESSION['warn']))
+			{
+				echo $_SESSION['warn'];
+				unset($_SESSION['warn']);
+			}
+		?>
+		
 	
 	</div>
 </body>

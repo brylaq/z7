@@ -39,6 +39,16 @@
 				}
 				if($row['password'] == $password)
 				{
+					if($row['errlog'] != 0)
+					{
+						if($result = $connection->query("SELECT * FROM logs WHERE isok=0 AND user='$user' ORDER BY datetime DESC"))
+						{
+							$log = $result->fetch_assoc();
+							$when = $log['datetime'];
+							
+							$_SESSION['warn'] = '<div class="err">Ostatnie błędne logowanie: '.$when.'</div>';
+						}
+					}
 					$errlog = 0;
 					$connection->query("UPDATE users SET errlog='$errlog' WHERE user='$user'");
 					
