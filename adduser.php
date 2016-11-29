@@ -42,9 +42,10 @@
 				{
 					$_SESSION['logedIn'] = true;
 					$_SESSION['user'] = $user;
-					// $cookie_name = "user";
-					// $cookie_value = $_POST['user'];
-					// setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+					
+					$cookie_value = $_POST['user'];
+					setcookie("user", $cookie_value, time() + (86400 * 30), "/");
+					setcookie("logedIn", true, time() + (86400 * 30), "/");
 					header("Location: explorer.php");
 				}
 				else

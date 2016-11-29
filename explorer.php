@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['logedIn'])) 
+	if(!isset($_COOKIE['logedIn'])) 
 	{
-		header("Location:i.php");
+		header("Location:index.php");
 		exit();
 	}
 ?>
