@@ -12,22 +12,22 @@
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>PAS Z7</title>
+	<title>PAS Z3</title>
 	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700&amp;subset=latin-ext" rel="stylesheet">
 </head>
 
 <body>
 	<div id="container">
-		<div class="title">Log in</div>
+		<div class="title">Register</div>
 		<div class="underline"></div>
 		
-		<form method="POST" action="login.php">
+		<form method="POST" action="adduser.php">
 		<br>
-		Login:<br><input type="text" name="user"
-		<?php if(isset($_COOKIE['user'])) echo "value=".$_COOKIE['user']; ?>><br>
+		Login:<br><input type="text" name="user"><br>
 		Password:<br><input type="password" name="password"><br>
-		<input type="submit" value="Log in"/>
+		Password:<br><input type="password" name="password2"><br>
+		<input type="submit" value="Register"/>
 		</form>
 		
 		<?php
@@ -38,8 +38,8 @@
 			}
 		?>
 		
-		<a href="register.php">
-		<div class="button">Register</div>
+		<a href="index.php">
+		<div class="button">Back</div>
 		</a>
 	
 	</div>
