@@ -8,6 +8,8 @@
 	
 	$user = $_COOKIE['user'];
 	$target_dir = "./users/".$user."/";
+	if(isset($_GET['dir']))
+		$target_dir = $_GET['dir']."/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
