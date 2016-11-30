@@ -29,9 +29,32 @@
 				echo $_SESSION['warn'];
 				unset($_SESSION['warn']);
 			}
+			
+			$path = './users/'.$_COOKIE['user']."/";
+			
+			echo "<div style='width:300px;text-align:center;margin-top: 100px;margin-left:auto;margin-right:auto;'><table>";
+			foreach (new DirectoryIterator($path) as $file) 
+			{
+				if ($file->isDir())
+				{
+					if($file->getFilename() !="." && $file->getFilename() !="..")
+					{
+						echo "<tr><td>";
+						print $file->getFilename() . "<br>";
+						echo "</td><td><div class='buttonsm'>EDIT<div></td></tr>";
+					}
+				}
+				elseif ($file->isFile()) 
+				{
+					echo "<tr><td>";
+					print $file->getFilename() . "<br>";
+					echo "</td><td><div class='buttonsm'>EDIT<div></td></tr>";
+				}
+			}
+			echo "</table></div>";
+			
 		?>
-		
-	
+
 	</div>
 </body>
 </html>

@@ -54,6 +54,24 @@ body
 	border: 1px solid #ffffff;
 }
 
+.buttonsm
+{
+	font-size: 18px;
+	width: 50px;
+	background-color: #3557a2;
+	color: #ffffff;
+	margin: 0 auto;
+	padding: 3px;
+	border: 1px solid #3557a2;
+}
+
+.buttonsm:hover
+{
+	background-color: #244691;
+	border: 1px solid #ffffff;
+	cursor: pointer;
+}
+
 a
 {
 	text-decoration: none;
@@ -90,4 +108,32 @@ input[type="submit"]:hover
 	background-color: #244691;
 	border: 1px solid #ffffff;
 	cursor: pointer;
+}
+
+td>a
+{
+	text-decoration: underline;
+	color: #ffffff;
+}
+
+table
+{
+	margin: 0 auto;
+}
+
+th
+{
+	font-size: 24px;
+	text-transform: uppercase;
+	border-bottom: 3px solid #3557a2;
+	padding: 10px;
+	margin: 0px;
+}
+
+td
+{
+	font-size: 20px;
+	margin: 0px;
+	border-bottom: 2px solid #3557a2;
+	padding: 5px;
 }
