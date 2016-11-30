@@ -3,14 +3,14 @@
 	
 	if ((!isset($_POST['user'])) || (!isset($_POST['password'])) || (!isset($_POST['password2'])))
 	{
-		$_SESSION['err'] = '<div id="err">Błąd formularza!</div>';
+		$_SESSION['err'] = '<div class="err">Błąd formularza!</div>';
 		header('Location: register.php');
 		exit();
 	}
 	
 	if($_POST['password']!=$_POST['password2'])
 	{
-		$_SESSION['err'] = '<div id="err">Hasła muszą być takie same!</div>';
+		$_SESSION['err'] = '<div class="err">Hasła muszą być takie same!</div>';
 		header('Location: register.php');
 		exit();
 	}
@@ -33,7 +33,7 @@
 			$row_counter = $result->num_rows;
 			if($row_counter>0)
 			{
-				$_SESSION['err'] = '<div id="err">Użytkownik istnieje już w bazie!</div>';
+				$_SESSION['err'] = '<div class="err">Użytkownik istnieje już w bazie!</div>';
 				header("Location: register.php");
 			}
 			else
@@ -46,11 +46,16 @@
 					$cookie_value = $_POST['user'];
 					setcookie("user", $cookie_value, time() + (86400 * 30), "/");
 					setcookie("logedIn", true, time() + (86400 * 30), "/");
+					$path = '/users/'.$user;
+					if (!is_dir($path)) 
+					{
+						mkdir($path, 0777, true);
+					}
 					header("Location: explorer.php");
 				}
 				else
 				{
-					$_SESSION['err'] = '<div id="err">Błędne zapytanie!</div>';
+					$_SESSION['err'] = '<div class="err">Błędne zapytanie!</div>';
 					header("Location: register.php");
 				}
 			}

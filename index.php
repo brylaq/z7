@@ -24,8 +24,7 @@
 		
 		<form method="POST" action="login.php">
 		<br>
-		Login:<br><input type="text" name="user"
-		<?php if(isset($_COOKIE['user'])) echo "value=".$_COOKIE['user']; ?>><br>
+		Login:<br><input type="text" name="user"><br>
 		Password:<br><input type="password" name="password"><br>
 		<input type="submit" value="Log in"/>
 		</form>
