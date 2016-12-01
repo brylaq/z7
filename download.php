@@ -29,7 +29,4 @@
     ob_clean();
     flush();
     readfile($path.$file);
-	
-	//header("Location:explorer.php");
-	
 ?>
