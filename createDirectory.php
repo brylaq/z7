@@ -8,8 +8,8 @@
 	
 	$user = $_COOKIE['user'];
 	$target_dir = "./users/".$user."/";
-	if(isset($_GET['filename']))
-		$target_dir = $_GET['filename'];
+	if(isset($_GET['dir']))
+		$target_dir = $target_dir.$_GET['dir']."/";
 	$target_dir = $target_dir.$_POST['dirName'];
 	header("Location:explorer.php");
 	if(!is_dir($target_dir))
