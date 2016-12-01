@@ -71,14 +71,14 @@
 				echo "<tr><td>";
 				$filename = $file->getFilename();
 				echo $filename."</td>";
-				$directory = $path."/".$filename;
+				$directory = $path.$filename;
+				$_SESSION['path'] = $path;
 				echo "
 				<td><a href='delete.php?filename=$directory'><div class='buttonsm' id='$directory'><i class='icon-trash-empty'></i></div></a></td>
-				<td><a href='download.php?filename=$directory'><div class='buttonsm' id='$directory'><i class='icon-download-cloud'></i></div></a></td></tr>";
+				<td><a href='download.php?filename=$filename'><div class='buttonsm' id='$directory'><i class='icon-download-cloud'></i></div></a></td></tr>";
 			}
 		}
 		echo "</table></div>";
-			
 	?>
 
 	</div>
