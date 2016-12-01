@@ -61,7 +61,9 @@
 					echo "<tr><td>";
 					$filename = $file->getFilename();
 					echo $filename."</td>";
-					echo "<td colspan=2><a href='explorer.php?dir=$filename'><div class='buttonsm' style='width: 120px'>EDIT<div></td></tr>";
+					$directory = $path."/".$filename;
+					echo "<td><a href='deletedir.php?filename=$directory'><div class='buttonsm'><i class='icon-trash-empty'></i></div></a></td><td>
+					<a href='explorer.php?dir=$filename'><div class='buttonsm'>&#x226B;</div></a></td></tr>";
 				}
 			}
 			elseif ($file->isFile()) 
@@ -71,8 +73,8 @@
 				echo $filename."</td>";
 				$directory = $path."/".$filename;
 				echo "
-				<td><a href='delete.php?filename=$directory'><div class='buttonsm' id='$directory'><i class='icon-trash-empty'></i><div></a></td>
-				<td><a href='download.php?filename=$directory'><div class='buttonsm' id='$directory'><i class='icon-download-cloud'></i><div></a></td></tr>";
+				<td><a href='delete.php?filename=$directory'><div class='buttonsm' id='$directory'><i class='icon-trash-empty'></i></div></a></td>
+				<td><a href='download.php?filename=$directory'><div class='buttonsm' id='$directory'><i class='icon-download-cloud'></i></div></a></td></tr>";
 			}
 		}
 		echo "</table></div>";
