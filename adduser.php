@@ -43,10 +43,13 @@
 					$_SESSION['logedIn'] = true;
 					$_SESSION['user'] = $user;
 					
+					$ip = $_SERVER["REMOTE_ADDR"];
+					$connection->query("INSERT INTO logs (user, ip, isok) VALUES('$user', '$ip', 1)");
+					
 					$cookie_value = $_POST['user'];
 					setcookie("user", $cookie_value, time() + (86400 * 30), "/");
 					setcookie("logedIn", true, time() + (86400 * 30), "/");
-					$path = '/users/'.$user;
+					$path = './users/'.$user;
 					if (!is_dir($path)) 
 					{
 						mkdir($path, 0777, true);
